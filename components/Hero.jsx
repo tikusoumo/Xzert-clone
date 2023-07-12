@@ -1,47 +1,52 @@
-import React from 'react'
+import styles from "../styles/page.module.css";
 
 function Hero() {
   return (
     <>
-      <div class="pattern-1"></div>
-      <div class="container">
-        <div class="dancing-box-wrap">
-          <div class="dancing-box">
-            <div class="box-cube">
-              <div class="box-faces box-front"></div>
-              <div class="box-faces box-back"></div>
-              <div class="box-faces box-top"></div>
-              <div class="box-faces box-bottom"></div>
-              <div class="box-faces box-left"></div>
-              <div class="box-faces box-right"></div>
+      <div className={styles.pattern1}></div>
+      <div className={styles.container}>
+        <div className={styles.dancingBoxWrap}>
+          <div className={styles.dancingBox}>
+            <div className={styles.boxCube}>
+              <div className={`${styles.boxFaces} ${styles.boxFront}`}></div>
+              <div className={`${styles.boxFaces} ${styles.boxBack}`}></div>
+              <div className={`${styles.boxFaces} ${styles.boxTop}`}></div>
+              <div className={`${styles.boxFaces} ${styles.boxBottom}`}></div>
+              <div className={`${styles.boxFaces} ${styles.boxLeft}`}></div>
+              <div className={`${styles.boxFaces} ${styles.boxRight}`}></div>
             </div>
           </div>
         </div>
-        <div class="brand-n-btn">
-          <h2 class="brand-tagline">
-            <span class="txt-color-1">Build, </span
-            ><span class="txt-color-2">test, </span
-            ><span class="txt-color-3">and </span
-            ><span class="txt-color-4">execute your ideas </span
-            ><span class="txt-color-3">with our </span
-            ><span class="txt-color-5">innovative solutions</span
-            ><span class="txt-color-2">.</span>
+        <div className={styles.brandNBtn}>
+          <h2 className={styles.brandTagLine}>
+            <span className={styles.txtColor1}>Build, </span>
+            <span className={styles.txtColor2}>test, </span>
+            <span className={styles.txtColor3}>and </span>
+            <span className={styles.txtColor4}>execute your ideas </span>
+            <span className={styles.txtColor3}>with our </span>
+            <span className={styles.txtColor5}>innovative solutions</span>
+            <span className={styles.txtColor2}>.</span>
           </h2>
-          <div class="cta-btn-group">
+          <div className={styles.ctaBtnGroup}>
             <a
               href="#"
-              class="btn cta-btn cta-1"
-              ><span class="cta1-icon"></span
-              ><span class="cta-txt">Chat now on Whatsapp</span></a
-            ><a class="btn cta-btn cta-2" href="services.html"
-              ><span class="cta-icon"></span
-              ><span class="cta-txt">Explore Our Services</span></a
+              className={`${styles.btn} ${styles.ctaBtn} ${styles.cta1}`}
             >
+              <span className={styles.cta1Icon}></span>
+              <span className={styles.ctaTxt}>Chat now on Whatsapp</span>
+            </a>
+            <a
+              className={`${styles.btn} ${styles.ctaBtn} ${styles.cta2}`}
+              href="#"
+            >
+              <span className={styles.ctaIcon}></span>
+              <span className={styles.ctaTxt}>Explore Our Services</span>
+            </a>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

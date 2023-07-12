@@ -12,8 +12,12 @@ export default function Home() {
       <section className={styles.mainMenu}>
         <Menu />
       </section>
+      <div className={styles.headerFix}></div>
       <section className={styles.companyIntro}>
         <Hero/>
+      </section>
+      <section className={styles.xzectServices}>
+        
       </section>
     </>
   );
