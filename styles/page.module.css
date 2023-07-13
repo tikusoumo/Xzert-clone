@@ -1,330 +1,598 @@
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.headerLogo{
-    display: flex;
-    align-items: center;
-    padding: 0.25rem 0;
+.logo,
+.logoNname {
+  display: flex;
+  align-items: center;
 }
-.logo{
-    width: 3rem;
-    height: auto;
-    padding: 0.375rem;
+.headerLogo {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
 }
-.companyName{
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: .188rem;
-    color: var(--txt-color-1);
-    margin: 0 0 0 0.75rem;
+.logo {
+  width: 3rem;
+  height: auto;
+  padding: 0.375rem;
+}
+.companyName {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.188rem;
+  color: var(--txt-color-1);
+  margin: 0 0 0 0.75rem;
 }
 .menuBtnWrap {
-    padding: 0.75rem 0.625rem;
+  padding: 0.75rem 0.625rem;
+}
+.menuBtn {
+  position: relative;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-block;
+}
+.menuBtn input {
+  display: none;
+}
+.menuBtn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--bg-color-1);
+  border-radius: 10px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+.menuBtn #menuBtnTop {
+  top: 0;
+  transform-origin: left center;
+}
+.menuBtn #menuBtnMiddle {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  width: 60%;
+}
+.menuBtn #menuBtnBottom {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+.menuBtn.open #menuBtnTop {
+  transform: rotate(45deg);
+  top: 0;
+  left: 5px;
+}
+.menuBtn.open #menuBtnMiddle {
+  width: 0;
+  opacity: 0;
+}
+.menuBtn.open #menuBtnBottom {
+  transform: rotate(-45deg);
+  top: 20px;
+  left: 5px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 5000;
+  background: rgba(29, 34, 51, 0.2);
+  width: 100%;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+}
+.headerFix {
+  height: 3.6rem;
+}
+.headerIndustries,
+.headerResources,
+.headerServices {
+  margin-top: 2rem;
+}
+.gradientBorder {
+  height: 2px;
+  width: 100%;
+}
+.gradientText {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn {
+  display: inline-block;
+  background: #1d2233;
+  color: var(--txt-color-1);
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+.gradientColor1 {
+  background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
+}
+.gradientColor2 {
+  background-image: linear-gradient(
+    145deg,
+    #dd0255,
+    #3047c9 30%,
+    #441fff 65%,
+    #02c362 85%
+  );
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.xzectUl {
+  list-style: none;
+  padding: 0;
+}
+.section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.sectionH2 {
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 0.75;
+  padding: 2rem 0;
+}
+.sectionP {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.mainMenu {
+  position: fixed;
+  left: 0;
+  top: -103vh;
+  padding: 5rem 1rem;
+  width: 100vw;
+  height: 100vh;
+  background: #1d2233;
+  transition: all 0.5s ease-in-out;
+  overflow-y: scroll;
+  z-index: 1000;
+  visibility: hidden;
+}
+.mainMenu.open {
+  top: 0;
+  visibility: visible;
+}
+.mainMenu h3 {
+  font-size: 1.5rem;
+  color: var(--txt-color-1);
+}
+.mainMenu li {
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+}
+.mainMenu a {
+  color: #cbeaff;
+}
+.pattern1 {
+  width: 100%;
+  height: 100%;
+  background: url(../public/images/patterns/rrreflection.svg);
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+.pattern2 {
+  width: 100%;
+  height: 100%;
+  background: url(../public/images/patterns/ttten.svg);
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+.companyIntro .container {
+  position: relative;
+}
+.dancingBoxWrap {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.dancingBox {
+  width: 13rem;
+  height: 13rem;
+  perspective: 2000px;
+  perspective-origin: 50% -460px;
+}
+.boxFaces {
+  background-color: #000030;
+  background: url(../public/images/xzect-logo-space.svg);
+  background-size: cover;
+  position: absolute;
+  border: 0.4375rem solid #fff;
+  width: 10.875rem;
+  height: 10.875rem;
+}
+.boxCube {
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(45deg) rotate(25deg);
+  transform-origin: 50% 100px 0;
+  animation: rotate 20s linear infinite;
+}
+.boxFront {
+  transform: translateZ(5.375rem);
+}
+.boxBack {
+  transform: rotateY(180deg) translateZ(5.375rem);
+}
+.boxTop {
+  transform: rotateX(90deg) translateZ(5.375rem);
+}
+.boxBottom {
+  transform: rotateX(-90deg) translateZ(5.375rem);
+}
+.boxLeft {
+  transform: rotateY(-90deg) translateZ(5.375rem);
+}
+.boxRight {
+  transform: rotateY(90deg) translateZ(5.375rem);
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(0);
   }
-  .menuBtn {
-    position: relative;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    cursor: pointer;
-    display: inline-block;
+  20% {
+    transform: rotateY(1turn);
   }
-  .menuBtn input {
-    display: none;
+  40% {
+    transform: rotateY(45deg) rotateX(-180deg);
   }
-  .menuBtn span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: var(--bg-color-1);
-    border-radius: 10px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.2s ease-in-out;
+  60% {
+    transform: rotateY(45deg) rotateX(180deg);
   }
-  .menuBtn #menuBtnTop {
-    top: 0;
-    transform-origin: left center;
+  80% {
+    transform: rotate(0);
   }
-  .menuBtn #menuBtnMiddle {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-    width: 60%;
+  to {
+    transform: rotate(1turn);
   }
-  .menuBtn #menuBtnBottom {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-  .menuBtn.open #menuBtnBop {
-    transform: rotate(45deg);
-    top: 0;
-    left: 5px;
-  }
-  .menuBtn.open #menuBtnMiddle {
-    width: 0;
-    opacity: 0;
-  }
-  .menuBtn.open #menuBtnBottom {
-    transform: rotate(-45deg);
-    top: 20px;
-    left: 5px;
-  }
-  .header {
-    position: fixed;
-    top: 0;
-    z-index: 5000;
-    background: rgba(29, 34, 51, 0.2);
-    width: 100%;
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    backdrop-filter: blur(16px) saturate(180%);
-  }
-  .headerFix {
-    height: 3.6rem;
-  }
-  .gradientBorder {
-    height: 2px;
-    width: 100%;
-  }
-  .gradientColor1 {
-    background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
-  }
-  .gradientColor2 {
-    background-image: linear-gradient(
-      145deg,
-      #dd0255,
-      #3047c9 30%,
-      #441fff 65%,
-      #02c362 85%
-    );
-  }
-  .container {
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-  .xzectUl {
-    list-style: none;
-    padding: 0;
-  }
-  .section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .mainMenu {
-    position: fixed;
-    left: 0;
-    top: -103vh;
-    padding: 5rem 1rem;
-    width: 100vw;
-    height: 100vh;
-    background: #1d2233;
-    transition: all 0.5s ease-in-out;
-    overflow-y: scroll;
-    z-index: 1000;
-    visibility: hidden;
-  }
-  .mainMenu.open {
-    top: 0;
-    visibility: visible;
-  }
-  .mainMenu h3 {
-    font-size: 1.5rem;
-    color: var(--txt-color-1);
-  }
-  .mainMenu li {
-    padding: 0.5rem 0;
-    font-size: 1.125rem;
-  }
-  .mainMenu a {
-    color: #cbeaff;
-  }
-  .pattern1 {
-    width: 100%;
-    height: 100%;
-    background: url(../public/images/patterns/rrreflection.svg);
-    background-position: 50%;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-  }
+}
+.brandTagLine {
+  font-size: 2.5rem;
+}
+
+.gradientBtn1 {
+  margin: 2.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.45);
+  transition: all 0.45s cubic-bezier(0.18, 0.77, 0.56, 1);
+  background-size: 150% 150%;
+}
+.gradientBtn1:hover {
+  background-position: 100% 0;
+}
+.ctaBtn {
+  margin: 1.25rem 1rem;
+  display: block;
+  padding: 1rem;
+}
+.ctaTxt {
+  padding: 0.75rem 0;
+}
+.cta1 {
+  border: 2px solid #075e54;
+  background: #075e54;
+  transition: all 0.3s ease-in-out;
+}
+.cta1:hover {
+  background: #05423b;
+  font-weight: 700;
+}
+.cta2 {
+  border: 2px solid #5e76fd;
+  background: #1d2233;
+  transition: all 0.3s ease-in-out;
+}
+.cta2:hover {
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(
+    100deg,
+    #fb2576,
+    #5e76fd 50%,
+    #6df1af 110%
+  );
+}
+.cta1Icon {
+  background: url(../public/images/whatsapp-icon.svg) no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  padding: 1rem;
+  margin: 0.25rem 1rem 0.25rem 0;
+}
+.brandNBtn {
+  order: 1;
+  flex: 5 1;
+}
+
+.companyIntro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 6vh 1rem 5vh;
+  position: relative;
+  border-bottom: 1px solid #363636;
+  background: #1d2233;
+  color: #f0f0f0;
+  overflow: hidden;
+}
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.servicesGroup {
+  margin-top: 2rem;
+}
+.serviceCard {
+  background: #242836;
+  padding: 1rem;
+  border: 1px solid #666;
+  border-radius: 3px;
+  margin: 1rem;
+  color: var(--txt-color-1);
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard:hover {
+  background: #272c3e;
+}
+.serviceCard:hover .img {
+  transform: scale(1.05);
+}
+.serviceCard .img {
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.serviceCard p {
+  color: #269df5;
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+}
+.serviceCard p:hover {
+  color: #ffa774;
+}
+@media screen and (min-width: 1200px) {
   .companyIntro .container {
-    position: relative;
-  }
-  .dancingBoxWrap {
     display: flex;
-    justify-content: center;
-    padding: 2rem 0;
   }
   .dancingBox {
-    width: 13rem;
-    height: 13rem;
+    width: 360px;
+    height: 360px;
     perspective: 2000px;
     perspective-origin: 50% -460px;
   }
-  .boxFaces {
-    background-color: #000030;
-    background: url(../public/images/xzect-logo-space.svg);
-    background-size: cover;
-    position: absolute;
-    border: 0.4375rem solid #fff;
-    width: 10.875rem;
-    height: 10.875rem;
-  }
   .boxCube {
-    transform-style: preserve-3d;
-    transform: rotateX(45deg) rotateY(45deg) rotate(25deg);
-    transform-origin: 50% 100px 0;
-    animation: rotate 20s linear infinite;
+    transform-origin: 30% 210px 0;
+  }
+  .boxFaces {
+    border: 6px solid #fff;
+    width: 360px;
+    height: 360px;
   }
   .boxFront {
-    transform: translateZ(5.375rem);
+    transform: translateZ(180px);
   }
   .boxBack {
-    transform: rotateY(180deg) translateZ(5.375rem);
+    transform: rotateY(180deg) translateZ(180px);
   }
   .boxTop {
-    transform: rotateX(90deg) translateZ(5.375rem);
+    transform: rotateX(90deg) translateZ(180px);
   }
   .boxBottom {
-    transform: rotateX(-90deg) translateZ(5.375rem);
+    transform: rotateX(-90deg) translateZ(180px);
   }
   .boxLeft {
-    transform: rotateY(-90deg) translateZ(5.375rem);
+    transform: rotateY(-90deg) translateZ(180px);
   }
   .boxRight {
-    transform: rotateY(90deg) translateZ(5.375rem);
+    transform: rotateY(90deg) translateZ(180px);
   }
-  @keyframes rotate {
-    0% {
-      transform: rotateY(0);
-    }
-    20% {
-      transform: rotateY(1turn);
-    }
-    40% {
-      transform: rotateY(45deg) rotateX(-180deg);
-    }
-    60% {
-      transform: rotateY(45deg) rotateX(180deg);
-    }
-    80% {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(1turn);
-    }
+  .dancingBoxWrap {
+    display: flex;
+    justify-content: right;
+    padding: 8rem 7.5rem 0 0;
+    order: 2;
+    flex: 4 1;
   }
-  .brandTagLine {
-    font-size: 2.5rem;
-  }
-  .ctaBtn {
-    margin: 1.25rem 1rem;
-    display: block;
-    padding: 1rem;
-  }
-  .ctaTxt {
-    padding: 0.75rem 0;
-  }
-  .cta1 {
-    border: 2px solid #075e54;
-    background: #075e54;
-    transition: all 0.3s ease-in-out;
-  }
-  .cta1:hover {
-    background: #05423b;
-    font-weight: 700;
-  }
-  .cta2 {
-    border: 2px solid #5e76fd;
-    background: #1d2233;
-    transition: all 0.3s ease-in-out;
-  }
-  .cta2:hover {
-    border-image-slice: 1;
-    border-width: 2px;
-    border-image-source: linear-gradient(
-      100deg,
-      #fb2576,
-      #5e76fd 50%,
-      #6df1af 110%
-    );
-  }
-  .cta1Icon {
-    background: url(../public/images/whatsapp-icon.svg) no-repeat;
-    background-size: contain;
-    background-position: 50%;
-    padding: 1rem;
-    margin: 0.25rem 1rem 0.25rem 0;
-  }
-  .brandNBtn {
-    order: 1;
-    flex: 5 1;
-  }
-  .txtColor1 {
-    color: #bd1052;
-  }
-  .txtColor2 {
-    color: #545ffd;
-  }
-  .txtColor3 {
-    color: #a2a2a2;
-  }
-  .txtColor4 {
-    color: #019267;
-  }
-  .txtColor5 {
-    color: #f1ae50;
-  }
-  @media screen and (min-width: 1200px) {
-    .companyIntro .container {
-      display: flex;
-    }
-    .dancingBox {
-      width: 360px;
-      height: 360px;
-      perspective: 2000px;
-      perspective-origin: 50% -460px;
-    }
-    .boxCube {
-      transform-origin: 30% 210px 0;
-    }
-    .boxFaces {
-      border: 6px solid #fff;
-      width: 360px;
-      height: 360px;
-    }
-    .boxFront {
-      transform: translateZ(180px);
-    }
-    .boxBack {
-      transform: rotateY(180deg) translateZ(180px);
-    }
-    .boxTop {
-      transform: rotateX(90deg) translateZ(180px);
-    }
-    .boxBottom {
-      transform: rotateX(-90deg) translateZ(180px);
-    }
-    .boxLeft {
-      transform: rotateY(-90deg) translateZ(180px);
-    }
-    .boxRight {
-      transform: rotateY(90deg) translateZ(180px);
-    }
-    .dancingBoxWrap {
-      display: flex;
-      justify-content: right;
-      padding: 8rem 7.5rem 0 0;
-      order: 2;
-      flex: 4 1;
-    }
-  }
+}
+.techStack {
+  background: #f5f5f5;
+  color: #000;
+  padding: 2rem 1rem;
+}
+.techStack .sectioT {
+  color: #666;
+}
+.techTools {
+  flex-wrap: wrap;
+  margin: 3rem 0;
+}
+.techTools,
+.ttCard {
+  display: flex;
+  justify-content: center;
+}
+.ttCard {
+  flex: 0 1 9.25rem;
+  align-items: center;
+  background: #ffffff4a;
+  color: #000;
+  border: 1px solid #fff;
+  padding: 0.5rem 0.25rem;
+  margin: 1rem 0.5rem;
+  box-shadow: 2px 14px 20px 6px rgba(224, 230, 235, 0.58);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.ttCard:hover {
+  background: var(--bg-color-1);
+  box-shadow: 2px 14px 20px 20px rgba(224, 230, 235, 0.8);
+}
+.ttCardImage #img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ttCardTitle {
+  margin-left: 0.75rem;
+  font-size: 1.25rem;
+}
+.viewAllStack {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.allStack {
+  background: var(--bg-color-1);
+  color: #ff5f08;
+  border: 1px solid #ff5f08;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.allStack:hover {
+  background: #ff5f08;
+  color: var(--txt-color-1);
+}
+.footerCta {
+  background: #1d2233;
+  color: #f0f0f0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.footerCta .container {
+  padding: 2.5rem 0;
+  position: relative;
+}
+.footerCta h2 {
+  font-size: 2.5rem;
+}
+.footerCta p {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.5rem;
+}
+.footerTop {
+  padding: 1rem 1.5rem;
+}
+.footerTop h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.5rem;
+}
+.footerTop li {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+}
+.footerTop a {
+  color: #929ba8;
+}
+.footerTop a:hover {
+  color: #1a77fa;
+}
+.footerAbout {
+  padding-right: 1rem;
+}
+.footerAbout h3 {
+  font-size: 1.75rem;
+}
+.footerAbout p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 1.5rem 0;
+}
+.footerSocial {
+  margin: 2rem 0;
+}
+.icon32 {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.fsIcon {
+  margin: 1rem 1rem 1rem 0;
+}
+.fsIcon:hover {
+  opacity: 0.5;
+}
+.facebook {
+  background-image: url(../public/images/icons/social/facebook.png);
+}
+.instagram {
+  background-image: url(../public/images/icons/social/instagram.png);
+}
+.linkedin {
+  background-image: url(../public/images/icons/social/linkedin.png);
+}
+.twitter {
+  background-image: url(../public/images/icons/social/twitter.png);
+}
+.pinterest {
+  background-image: url(../public/images/icons/social/pinterest.png);
+}
+.youtube {
+  background-image: url(../public/images/icons/social/youtube.png);
+}
+.emailIcon {
+  background-image: url(../public/images/icons/email.png);
+}
+.contactIcon {
+  background-image: url(../public/images/icons/phone.png);
+}
+.addressIcon {
+  background-image: url(../public/images/icons/location.png);
+}
+.timeIcon {
+  background-image: url(../public/images/icons/clock.png);
+}
+.footerIndustries,
+.footerServices {
+  padding-right: 1rem;
+}
+.footerBottom {
+  background: #181818;
+  text-align: center;
+  padding: 1rem 0;
+}
+.txtColor1 {
+  color: #bd1052;
+}
+.txtColor2 {
+  color: #545ffd;
+}
+.txtColor3 {
+  color: #a2a2a2;
+}
+.txtColor4 {
+  color: #019267;
+}
+.txtColor5 {
+  color: #f1ae50;
+}

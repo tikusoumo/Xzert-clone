@@ -1,24 +1,35 @@
-import styles from "../styles/page.module.css";
-import Navbar from "../components/Navbar";
-import Menu from "../components/Menu";
-import Hero from "../components/Hero";
+import styles from "@/styles/page.module.css";
+import Navbar from "@/components/Navbar";
+import Menu from "@/components/Menu";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import TechStack from "@/components/TechStack";
+import Consultation from "@/components/Consultation";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <header className={`${styles.header} ${styles.container}`}>
+      
         <Navbar />
-      </header>
-      <section className={styles.mainMenu}>
-        <Menu />
-      </section>
+     
+      
       <div className={styles.headerFix}></div>
       <section className={styles.companyIntro}>
         <Hero/>
       </section>
       <section className={styles.xzectServices}>
-        
+        <Services/>
       </section>
+      <section className={styles.techStack}>
+        <TechStack/>
+      </section>
+      <section className={styles.footerCta}>
+        <Consultation/>
+      </section>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }
