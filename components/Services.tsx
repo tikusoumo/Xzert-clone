@@ -1,3 +1,4 @@
+
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import SoftwareImg from "@/public/images/services/software-and-app-dev.jpg";
@@ -25,57 +26,57 @@ function Services() {
         </p>
         <div className={styles.servicesGroup}>
           <div className={styles.servicesList}>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={SoftwareImg} alt="" />
               <h3>Software &amp; App Development</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={DevAndSeoImg} alt="" />
               <h3>Website Development &amp; SEO</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={CloudServiceImg} alt="" />
               <h3>Cloud Services</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={RoboticsImg} alt="" />
               <h3>Robotics &amp; Automation</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={ThreeDImg} alt="" />
               <h3>3D Printing &amp; Prototyping</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={DataScienceImg} alt="" />
               <h3>Data Science &amp; Analytics</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={MachineLearningImg} alt="" />
               <h3>AI &amp; Machine Learning</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={ARVRImg} alt="" />
               <h3>IOT, AR &amp; VR</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={BlockChainImg} alt="" />
               <h3>Blockchain</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={TechConsultancyImg} alt="" />
               <h3>Tech Consultancy</h3>
               <p>Get Started</p>
             </a>
-            <a className={`${styles.serviceCard} ${styles.undefined}`} href="#">
+            <a className={styles.serviceCard} href="#">
               <Image className={styles.img} src={ResearchNDevImg} alt="" />
               <h3>Research &amp; Development</h3>
               <p>Get Started</p>

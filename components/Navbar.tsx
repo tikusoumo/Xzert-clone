@@ -1,4 +1,5 @@
 "use client";
+import style from "@/styles/navBar.module.css";
 import styles from "@/styles/page.module.css";
 import Logo from "@/public/xzect-logo.svg";
 import Image from "next/image";
@@ -21,16 +22,15 @@ function Navbar() {
   };
   return (
     <>
-    <header className={`${styles.header} ${styles.container}`}>
-      <nav className={styles.navbar}>
-        <div className={styles.headerLogo}>
-          <a className={styles.logoNname} href="#">
-            <Image src={Logo} alt="Logo" className={styles.logo} />
-            <h1 className={styles.companyName}>Xzect</h1>
-          </a>
-        </div>
-        <div>
-          <div className={styles.headerMenu}>
+      <header className={styles.header}>
+        <nav className={`${styles.navbar} ${styles.container}`}>
+          <div className={styles.headerLogo}>
+            <a className={styles.logoNname} href="#">
+              <Image src={Logo} alt="Logo" className={styles.logo} />
+              <h1 className={styles.companyName}>Xzect</h1>
+            </a>
+          </div>
+          <div>
             <div onClick={menuToggle} className={styles.menuBtnWrap}>
               <div className={`${menuBtn}`}>
                 <span id={styles.menuBtnTop}></span>
@@ -39,16 +39,14 @@ function Navbar() {
               </div>
             </div>
           </div>
-        </div>
-      </nav>
-      <div
-        className={`${styles.gradientBorder} ${styles.gradientColor1}`}
-      ></div>
+        </nav>
+        <div
+          className={`${styles.gradientBorder} ${styles.gradientColor1}`}
+        ></div>
       </header>
       <section className={`${mainMenu}`}>
-       <Menu/>
+        <Menu />
       </section>
-
     </>
   );
 }

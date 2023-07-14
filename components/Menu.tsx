@@ -1,4 +1,7 @@
+import style from "../styles/navBar.module.css";
 import styles from "../styles/page.module.css";
+import '@/styles/globals.css'
+
 
 function Menu() {
   return (
@@ -150,12 +153,12 @@ function Menu() {
                 <a href="#">Blog</a>
               </li>
               <li>
-                <a href="#https://www.youtube.com/@xzect_labs">
+                <a href="https://www.youtube.com/@xzect_labs">
                   Youtube (@xzect_labs)
                 </a>
               </li>
               <li>
-                <a href="#https://github.com/xzect">Github (@xzect)</a>
+                <a href="https://github.com/xzect">Github (@xzect)</a>
               </li>
             </ul>
           </div>

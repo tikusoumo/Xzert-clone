@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import Cpp from "@/public/images/icons/tech-stack/cpp.png";

@@ -1,18 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 4000;
+  background: rgba(29, 34, 51, 0.2);
+  width: 100%;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0;
 }
 .logo,
 .logoNname {
   display: flex;
   align-items: center;
 }
-.headerLogo {
-  display: flex;
-  align-items: center;
-  padding: 0.25rem 0;
-}
+
 .logo {
   width: 3rem;
   height: auto;
@@ -26,77 +38,115 @@
   margin: 0 0 0 0.75rem;
 }
 .menuBtnWrap {
-  padding: 0.75rem 0.625rem;
-}
-.menuBtn {
-  position: relative;
-  width: 28px;
-  height: 20px;
-  background: transparent;
-  cursor: pointer;
-  display: inline-block;
-}
-.menuBtn input {
-  display: none;
-}
-.menuBtn span {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: var(--bg-color-1);
-  border-radius: 10px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.2s ease-in-out;
-}
-.menuBtn #menuBtnTop {
-  top: 0;
-  transform-origin: left center;
-}
-.menuBtn #menuBtnMiddle {
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: left center;
-  width: 60%;
-}
-.menuBtn #menuBtnBottom {
-  top: 100%;
-  transform-origin: left center;
-  transform: translateY(-100%);
-}
-.menuBtn.open #menuBtnTop {
-  transform: rotate(45deg);
-  top: 0;
-  left: 5px;
-}
-.menuBtn.open #menuBtnMiddle {
-  width: 0;
-  opacity: 0;
-}
-.menuBtn.open #menuBtnBottom {
-  transform: rotate(-45deg);
-  top: 20px;
-  left: 5px;
-}
-.header {
-  position: fixed;
-  top: 0;
-  z-index: 5000;
-  background: rgba(29, 34, 51, 0.2);
-  width: 100%;
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-}
+    padding: 0.75rem 0.625rem;
+  }
+  .menuBtn {
+    position: relative;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .menuBtn span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--bg-color-1);
+    border-radius: 10px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.2s ease-in-out;
+  }
+  .menuBtn #menuBtnTop {
+    top: 0;
+    transform-origin: left center;
+  }
+  .menuBtn #menuBtnMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+    width: 60%;
+  }
+  .menuBtn #menuBtnBottom {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  .menuBtn.open #menuBtnTop {
+    transform: rotate(45deg);
+    top: 0;
+    left: 5px;
+  }
+  .menuBtn.open #menuBtnMiddle {
+    width: 0;
+    opacity: 0;
+  }
+  .menuBtn.open #menuBtnBottom {
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 5px;
+  }
+  .gradientBorder {
+    height: 2px;
+    width: 100%;
+  }
+  .gradientColor1 {
+    background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
+  }
+  .mainMenu {
+    position: fixed;
+    left: 0;
+    top: -103vh;
+    padding: 5rem 1rem;
+    width: 100vw;
+    height: 100vh;
+    background: #1d2233;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+    z-index: 1000;
+    visibility: hidden;
+  }
+  .mainMenu.open {
+    top: 0;
+    visibility: visible;
+  }
+  .mainMenu h3 {
+    font-size: 1.5rem;
+    color: var(--txt-color-1);
+  }
+  .mainMenu li {
+    padding: 0.5rem 0;
+    font-size: 1.125rem;
+  }
+  .mainMenu a {
+    color: #cbeaff;
+  }
+  .xzectUl {
+    list-style: none;
+    padding: 0;
+  }
+  .headerMiddle {
+    display: flex;
+    justify-content: space-between;
+  }
+  .headerIndustries,
+  .headerPopular,
+  .headerResources,
+  .headerServices {
+    margin-top: 2rem;
+  }
 .headerFix {
   height: 3.6rem;
 }
-.headerIndustries,
-.headerResources,
-.headerServices {
-  margin-top: 2rem;
+.xzectUl {
+  list-style: none;
+  padding: 0;
 }
+
 .gradientBorder {
   height: 2px;
   width: 100%;
@@ -130,13 +180,76 @@
   max-width: 1600px;
   margin: 0 auto;
 }
-.xzectUl {
-  list-style: none;
-  padding: 0;
-}
+
 .section {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.servicesGroup {
+  margin-top: 2rem;
+}
+.serviceCard {
+  background: #242836;
+  padding: 1rem;
+  border: 1px solid #666;
+  border-radius: 3px;
+  margin: 1rem;
+  color: var(--txt-color-1);
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard:hover {
+  background: #272c3e;
+}
+.serviceCard:hover .img {
+  transform: scale(1.05);
+}
+.serviceCard .img {
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.serviceCard p {
+  color: #269df5;
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+}
+.serviceCard p:hover {
+  color: #ffa774;
+}
+.pattern1 {
+  width: 100%;
+  height: 100%;
+  background: url(../public/images/patterns/rrreflection.svg);
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+
+.pattern2 {
+  width: 100%;
+  height: 100%;
+  background: url(../public/images/patterns/ttten.svg);
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
 }
 .sectionH2 {
   font-size: 2.5rem;
@@ -150,56 +263,6 @@
   max-width: 70%;
   margin: 0 auto;
   line-height: 1.5;
-}
-.mainMenu {
-  position: fixed;
-  left: 0;
-  top: -103vh;
-  padding: 5rem 1rem;
-  width: 100vw;
-  height: 100vh;
-  background: #1d2233;
-  transition: all 0.5s ease-in-out;
-  overflow-y: scroll;
-  z-index: 1000;
-  visibility: hidden;
-}
-.mainMenu.open {
-  top: 0;
-  visibility: visible;
-}
-.mainMenu h3 {
-  font-size: 1.5rem;
-  color: var(--txt-color-1);
-}
-.mainMenu li {
-  padding: 0.5rem 0;
-  font-size: 1.125rem;
-}
-.mainMenu a {
-  color: #cbeaff;
-}
-.pattern1 {
-  width: 100%;
-  height: 100%;
-  background: url(../public/images/patterns/rrreflection.svg);
-  background-position: 50%;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-}
-.pattern2 {
-  width: 100%;
-  height: 100%;
-  background: url(../public/images/patterns/ttten.svg);
-  background-position: top;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
 }
 .companyIntro .container {
   position: relative;
@@ -283,6 +346,21 @@
 .gradientBtn1:hover {
   background-position: 100% 0;
 }
+.txtColor1 {
+  color: #bd1052;
+}
+.txtColor2 {
+  color: #545ffd;
+}
+.txtColor3 {
+  color: #a2a2a2;
+}
+.txtColor4 {
+  color: #019267;
+}
+.txtColor5 {
+  color: #f1ae50;
+}
 .ctaBtn {
   margin: 1.25rem 1rem;
   display: block;
@@ -338,47 +416,7 @@
   color: #f0f0f0;
   overflow: hidden;
 }
-.servicesList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.servicesGroup {
-  margin-top: 2rem;
-}
-.serviceCard {
-  background: #242836;
-  padding: 1rem;
-  border: 1px solid #666;
-  border-radius: 3px;
-  margin: 1rem;
-  color: var(--txt-color-1);
-  transition: all 0.3s ease-in-out;
-}
-.serviceCard:hover {
-  background: #272c3e;
-}
-.serviceCard:hover .img {
-  transform: scale(1.05);
-}
-.serviceCard .img {
-  border-radius: 10px;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-.serviceCard h3 {
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin: 1rem 0;
-}
-.serviceCard p {
-  color: #269df5;
-  display: inline-block;
-  margin: 0.5rem 0 1rem;
-}
-.serviceCard p:hover {
-  color: #ffa774;
-}
+
 @media screen and (min-width: 1200px) {
   .companyIntro .container {
     display: flex;
@@ -423,14 +461,17 @@
     flex: 4 1;
   }
 }
+@media screen and (min-width: 1600px) {
+  .brandTagLine {
+    font-size: 6rem;
+  }
+}
 .techStack {
   background: #f5f5f5;
   color: #000;
   padding: 2rem 1rem;
 }
-.techStack .sectioT {
-  color: #666;
-}
+
 .techTools {
   flex-wrap: wrap;
   margin: 3rem 0;
@@ -581,18 +622,218 @@
   text-align: center;
   padding: 1rem 0;
 }
-.txtColor1 {
-  color: #bd1052;
+
+@media  (min-width: 400px) {
+  .serviceCard {
+    width: auto;
+  }
+  .headerMiddle {
+    
+    flex-direction: column;
+  }
 }
-.txtColor2 {
-  color: #545ffd;
+@media only screen and (min-width: 640px) {
+  .brandTagLine {
+    font-size: 4.5rem;
+  }
+  
 }
-.txtColor3 {
-  color: #a2a2a2;
+@media screen and (min-width: 768px) {
+ 
+  .brandTagLine {
+    font-size: 5rem;
+    padding: 6rem 2rem;
+  }
+  .pattern2 {
+    background-size: contain;
+  }
+  .menuBtnWrap {
+    padding: 0.625rem 0.5rem;
+  }
+  .menuBtn {
+    width: 32px;
+    height: 24px;
+  }
+
+  .ttCard {
+    display: flex;
+    flex: 0 1 12.5rem;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff4a;
+    color: #000;
+    border: 1px solid #fff;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem;
+    box-shadow: 2px 14px 20px 6px rgba(224, 230, 235, 0.58);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  .ttCard:hover {
+    background: var(--bg-color-1);
+    box-shadow: 2px 14px 20px 20px rgba(224, 230, 235, 0.8);
+  }
+  .ttCardImage .img {
+    width: 2rem;
+  }
+  .ttCardTitle {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+  }
+  .ctaBtnGroup {
+    display: flex;
+  }
+  .ctaBtn {
+    flex: 1 1;
+    margin: 1rem;
+  }
+  .ctaIcon {
+    margin: 0.5rem 1rem 0.5rem 0;
+  }
 }
-.txtColor4 {
-  color: #019267;
+@media screen and (min-width: 1024px) {
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .companyName {
+    margin-left: 0.5rem;
+  }
+
+  .companyIntro {
+    padding: 1vh 0 4vh;
+  }
+  .brandNBtn {
+    order: 1;
+    flex: 5 1;
+  }
+  .brandTagLine {
+    font-size: 5rem;
+  }
+  .servicesGroup {
+    align-content: center;
+    flex: 1 1;
+  }
+
+  .serviceCard {
+    margin: 1rem;
+  }
+  .sectionH2 {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 0.75;
+    padding: 2rem 0;
+  }
+  .sectionP {
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .footerCta .container {
+    padding: 5rem 0;
+  }
+  .footerCta h2 {
+    padding: 2rem 0;
+    font-size: 2.75rem;
+  }
+  .footerCta p {
+    padding: 2rem;
+    font-size: 3.75rem;
+    font-weight: 700;
+  }
+  .gradientBtn1 {
+    font-size: 1.375rem;
+    padding: 0.75rem 2rem;
+    margin: 2rem;
+    background-size: 200% 200%;
+  }
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 1rem 1rem;
+  }
+  .footerTop h3 {
+    font-size: 1.25rem;
+  }
+  .footerTop li {
+    padding: 0.5rem 0;
+  }
+  .footerTop a {
+    color: #929ba8;
+  }
+  .footerAbout {
+    flex-basis: 35%;
+    padding-right: 1rem;
+  }
+  .footerAbout h3 {
+    font-size: 1.5rem;
+  }
+  .footerAbout p {
+    line-height: 2.5;
+  }
+  .footerIndustries,
+  .footerServices {
+    padding-right: 1rem;
+  }
+  .footerBottom {
+    text-align: center;
+    padding: 1rem;
+  }
 }
-.txtColor5 {
-  color: #f1ae50;
+@media screen and (min-width: 1200px) {
+  .companyIntro .container {
+    display: flex;
+  }
+  .dancingBox {
+    width: 360px;
+    height: 360px;
+    perspective: 2000px;
+    perspective-origin: 50% -460px;
+  }
+  .boxCube {
+    transform-origin: 30% 210px 0;
+  }
+  .boxFaces {
+    border: 6px solid #fff;
+    width: 360px;
+    height: 360px;
+  }
+  .boxFront {
+    transform: translateZ(180px);
+  }
+  .boxBack {
+    transform: rotateY(180deg) translateZ(180px);
+  }
+  .boxTop {
+    transform: rotateX(90deg) translateZ(180px);
+  }
+  .boxbottom {
+    transform: rotateX(-90deg) translateZ(180px);
+  }
+  .boxLeft {
+    transform: rotateY(-90deg) translateZ(180px);
+  }
+  .boxRight {
+    transform: rotateY(90deg) translateZ(180px);
+  }
+  .dancingboxWrap {
+    display: flex;
+    justify-content: right;
+    padding: 8rem 7.5rem 0 0;
+    order: 2;
+    flex: 4 1;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .brandTagLine {
+    font-size: 6rem;
+  }
 }

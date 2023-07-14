@@ -1,6 +1,5 @@
 import styles from "@/styles/page.module.css";
 import Navbar from "@/components/Navbar";
-import Menu from "@/components/Menu";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import TechStack from "@/components/TechStack";
@@ -10,25 +9,23 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      
-        <Navbar />
-     
-      
+      <Navbar />
+
       <div className={styles.headerFix}></div>
       <section className={styles.companyIntro}>
-        <Hero/>
+        <Hero />
       </section>
       <section className={styles.xzectServices}>
-        <Services/>
+        <Services />
       </section>
       <section className={styles.techStack}>
-        <TechStack/>
+        <TechStack />
       </section>
       <section className={styles.footerCta}>
-        <Consultation/>
+        <Consultation />
       </section>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </>
   );
