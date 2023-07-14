@@ -1,5 +1,4 @@
 "use client";
-import style from "@/styles/navBar.module.css";
 import styles from "@/styles/page.module.css";
 import Logo from "@/public/xzect-logo.svg";
 import Image from "next/image";

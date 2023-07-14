@@ -1,4 +1,3 @@
-import style from "../styles/navBar.module.css";
 import styles from "../styles/page.module.css";
 import '@/styles/globals.css'
 

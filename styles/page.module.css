@@ -1,3 +1,46 @@
+/*====================Common Styles==============*/
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.btn {
+  display: inline-block;
+  background: #1d2233;
+  color: var(--txt-color-1);
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+.sectionH2 {
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 0.75;
+  padding: 2rem 0;
+}
+.sectionP {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.gradientColor1 {
+  background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
+}
+.gradientColor2 {
+  background-image: linear-gradient(
+    145deg,
+    #dd0255,
+    #3047c9 30%,
+    #441fff 65%,
+    #02c362 85%
+  );
+}
+.gradientBorder {
+  height: 2px;
+  width: 100%;
+}
+/*===============NavBar Section================== */
 .header {
   position: fixed;
   top: 0;
@@ -38,195 +81,119 @@
   margin: 0 0 0 0.75rem;
 }
 .menuBtnWrap {
-    padding: 0.75rem 0.625rem;
-  }
-  .menuBtn {
-    position: relative;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    cursor: pointer;
-    display: inline-block;
-  }
-  
-  .menuBtn span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: var(--bg-color-1);
-    border-radius: 10px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.2s ease-in-out;
-  }
-  .menuBtn #menuBtnTop {
-    top: 0;
-    transform-origin: left center;
-  }
-  .menuBtn #menuBtnMiddle {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-    width: 60%;
-  }
-  .menuBtn #menuBtnBottom {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-  .menuBtn.open #menuBtnTop {
-    transform: rotate(45deg);
-    top: 0;
-    left: 5px;
-  }
-  .menuBtn.open #menuBtnMiddle {
-    width: 0;
-    opacity: 0;
-  }
-  .menuBtn.open #menuBtnBottom {
-    transform: rotate(-45deg);
-    top: 20px;
-    left: 5px;
-  }
-  .gradientBorder {
-    height: 2px;
-    width: 100%;
-  }
-  .gradientColor1 {
-    background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
-  }
-  .mainMenu {
-    position: fixed;
-    left: 0;
-    top: -103vh;
-    padding: 5rem 1rem;
-    width: 100vw;
-    height: 100vh;
-    background: #1d2233;
-    transition: all 0.5s ease-in-out;
-    overflow-y: scroll;
-    z-index: 1000;
-    visibility: hidden;
-  }
-  .mainMenu.open {
-    top: 0;
-    visibility: visible;
-  }
-  .mainMenu h3 {
-    font-size: 1.5rem;
-    color: var(--txt-color-1);
-  }
-  .mainMenu li {
-    padding: 0.5rem 0;
-    font-size: 1.125rem;
-  }
-  .mainMenu a {
-    color: #cbeaff;
-  }
-  .xzectUl {
-    list-style: none;
-    padding: 0;
-  }
-  .headerMiddle {
-    display: flex;
-    justify-content: space-between;
-  }
-  .headerIndustries,
-  .headerPopular,
-  .headerResources,
-  .headerServices {
-    margin-top: 2rem;
-  }
-.headerFix {
-  height: 3.6rem;
+  padding: 0.75rem 0.625rem;
+}
+.menuBtn {
+  position: relative;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.menuBtn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--bg-color-1);
+  border-radius: 10px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+.menuBtn #menuBtnTop {
+  top: 0;
+  transform-origin: left center;
+}
+.menuBtn #menuBtnMiddle {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  width: 60%;
+}
+.menuBtn #menuBtnBottom {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+.menuBtn.open #menuBtnTop {
+  transform: rotate(45deg);
+  top: 0;
+  left: 5px;
+}
+.menuBtn.open #menuBtnMiddle {
+  width: 0;
+  opacity: 0;
+}
+.menuBtn.open #menuBtnBottom {
+  transform: rotate(-45deg);
+  top: 20px;
+  left: 5px;
+}
+
+.mainMenu {
+  position: fixed;
+  left: 0;
+  top: -103vh;
+  padding: 5rem 1rem;
+  width: 100vw;
+  height: 100vh;
+  background: #1d2233;
+  transition: all 0.5s ease-in-out;
+  overflow-y: scroll;
+  z-index: 1000;
+  visibility: hidden;
+}
+.mainMenu.open {
+  top: 0;
+  visibility: visible;
+}
+.mainMenu h3 {
+  font-size: 1.5rem;
+  color: var(--txt-color-1);
+}
+.mainMenu li {
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+}
+.mainMenu a {
+  color: #cbeaff;
 }
 .xzectUl {
   list-style: none;
   padding: 0;
 }
-
-.gradientBorder {
-  height: 2px;
-  width: 100%;
-}
-.gradientText {
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.btn {
-  display: inline-block;
-  background: #1d2233;
-  color: var(--txt-color-1);
-  text-align: center;
-  padding: 1rem 2rem;
-  border-radius: 3px;
-}
-.gradientColor1 {
-  background-image: linear-gradient(100deg, #fb2576, #5e76fd 50%, #6df1af 110%);
-}
-.gradientColor2 {
-  background-image: linear-gradient(
-    145deg,
-    #dd0255,
-    #3047c9 30%,
-    #441fff 65%,
-    #02c362 85%
-  );
-}
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.section {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.servicesList {
+.headerMiddle {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
-.servicesGroup {
+.headerIndustries,
+.headerPopular,
+.headerResources,
+.headerServices {
   margin-top: 2rem;
 }
-.serviceCard {
-  background: #242836;
-  padding: 1rem;
-  border: 1px solid #666;
-  border-radius: 3px;
-  margin: 1rem;
-  color: var(--txt-color-1);
-  transition: all 0.3s ease-in-out;
+
+.headerServices ul li a:hover {
+  color: #1a77fa;
 }
-.serviceCard:hover {
-  background: #272c3e;
+.headerIndustries ul li a:hover {
+  color: #1a77fa;
 }
-.serviceCard:hover .img {
-  transform: scale(1.05);
+.headerResources ul li a:hover {
+  color: #1a77fa;
 }
-.serviceCard .img {
-  border-radius: 10px;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
+.headerPopular ul li a:hover {
+  color: #1a77fa;
 }
-.serviceCard h3 {
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin: 1rem 0;
+.headerFix {
+  height: 3.6rem;
 }
-.serviceCard p {
-  color: #269df5;
-  display: inline-block;
-  margin: 0.5rem 0 1rem;
-}
-.serviceCard p:hover {
-  color: #ffa774;
-}
+
+/* ==================Hero section=================*/
 .pattern1 {
   width: 100%;
   height: 100%;
@@ -238,34 +205,19 @@
   left: 0;
   opacity: 0.3;
 }
-
-
-.pattern2 {
-  width: 100%;
-  height: 100%;
-  background: url(../public/images/patterns/ttten.svg);
-  background-position: top;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-}
-.sectionH2 {
-  font-size: 2.5rem;
-  text-align: center;
-  line-height: 0.75;
-  padding: 2rem 0;
-}
-.sectionP {
-  font-size: 1.25rem;
-  text-align: center;
-  max-width: 70%;
-  margin: 0 auto;
-  line-height: 1.5;
-}
 .companyIntro .container {
   position: relative;
+}
+.companyIntro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 6vh 1rem 5vh;
+  position: relative;
+  border-bottom: 1px solid #363636;
+  background: #1d2233;
+  color: #f0f0f0;
+  overflow: hidden;
 }
 .dancingBoxWrap {
   display: flex;
@@ -334,17 +286,9 @@
 .brandTagLine {
   font-size: 2.5rem;
 }
-
-.gradientBtn1 {
-  margin: 2.5rem 1rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.45);
-  transition: all 0.45s cubic-bezier(0.18, 0.77, 0.56, 1);
-  background-size: 150% 150%;
-}
-.gradientBtn1:hover {
-  background-position: 100% 0;
+.brandNBtn {
+  order: 1;
+  flex: 5 1;
 }
 .txtColor1 {
   color: #bd1052;
@@ -400,72 +344,52 @@
   padding: 1rem;
   margin: 0.25rem 1rem 0.25rem 0;
 }
-.brandNBtn {
-  order: 1;
-  flex: 5 1;
-}
 
-.companyIntro {
+/*==================Sercives Section==============*/
+
+.servicesList {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 6vh 1rem 5vh;
-  position: relative;
-  border-bottom: 1px solid #363636;
-  background: #1d2233;
-  color: #f0f0f0;
-  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+.servicesGroup {
+  margin-top: 2rem;
+}
+.serviceCard {
+  background: #242836;
+  padding: 1rem;
+  border: 1px solid #666;
+  border-radius: 3px;
+  margin: 1rem;
+  color: var(--txt-color-1);
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard:hover {
+  background: #272c3e;
+}
+.serviceCard:hover .img {
+  transform: scale(1.05);
+}
+.serviceCard .img {
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.serviceCard h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.serviceCard p {
+  color: #269df5;
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+}
+.serviceCard p:hover {
+  color: #ffa774;
+}
+/*===================TechStack=====================*/
 
-@media screen and (min-width: 1200px) {
-  .companyIntro .container {
-    display: flex;
-  }
-  .dancingBox {
-    width: 360px;
-    height: 360px;
-    perspective: 2000px;
-    perspective-origin: 50% -460px;
-  }
-  .boxCube {
-    transform-origin: 30% 210px 0;
-  }
-  .boxFaces {
-    border: 6px solid #fff;
-    width: 360px;
-    height: 360px;
-  }
-  .boxFront {
-    transform: translateZ(180px);
-  }
-  .boxBack {
-    transform: rotateY(180deg) translateZ(180px);
-  }
-  .boxTop {
-    transform: rotateX(90deg) translateZ(180px);
-  }
-  .boxBottom {
-    transform: rotateX(-90deg) translateZ(180px);
-  }
-  .boxLeft {
-    transform: rotateY(-90deg) translateZ(180px);
-  }
-  .boxRight {
-    transform: rotateY(90deg) translateZ(180px);
-  }
-  .dancingBoxWrap {
-    display: flex;
-    justify-content: right;
-    padding: 8rem 7.5rem 0 0;
-    order: 2;
-    flex: 4 1;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .brandTagLine {
-    font-size: 6rem;
-  }
-}
 .techStack {
   background: #f5f5f5;
   color: #000;
@@ -520,6 +444,38 @@
   background: #ff5f08;
   color: var(--txt-color-1);
 }
+
+/*================Consultaion Section==============*/
+
+.pattern2 {
+  width: 100%;
+  height: 100%;
+  background: url(../public/images/patterns/ttten.svg);
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+.gradientText {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientBtn1 {
+  margin: 2.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.45);
+  transition: all 0.45s cubic-bezier(0.18, 0.77, 0.56, 1);
+  background-size: 150% 150%;
+}
+.gradientBtn1:hover {
+  background-position: 100% 0;
+}
+/*=================Footer Section==================*/
 .footerCta {
   background: #1d2233;
   color: #f0f0f0;
@@ -582,6 +538,8 @@
 }
 .fsIcon:hover {
   opacity: 0.5;
+  transform: translate(0, -2px);
+  transition: all 0.2s ease-in-out;
 }
 .facebook {
   background-image: url(../public/images/icons/social/facebook.png);
@@ -622,24 +580,23 @@
   text-align: center;
   padding: 1rem 0;
 }
-
-@media  (min-width: 400px) {
+/*================Responsiveness===================*/
+@media screen and (max-width: 768px) {
+  .headerMiddle {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 390px) {
   .serviceCard {
     width: auto;
-  }
-  .headerMiddle {
-    
-    flex-direction: column;
   }
 }
 @media only screen and (min-width: 640px) {
   .brandTagLine {
     font-size: 4.5rem;
   }
-  
 }
 @media screen and (min-width: 768px) {
- 
   .brandTagLine {
     font-size: 5rem;
     padding: 6rem 2rem;
@@ -692,7 +649,6 @@
   }
 }
 @media screen and (min-width: 1024px) {
-  
   .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -811,7 +767,7 @@
   .boxTop {
     transform: rotateX(90deg) translateZ(180px);
   }
-  .boxbottom {
+  .boxBottom {
     transform: rotateX(-90deg) translateZ(180px);
   }
   .boxLeft {
@@ -820,7 +776,7 @@
   .boxRight {
     transform: rotateY(90deg) translateZ(180px);
   }
-  .dancingboxWrap {
+  .dancingBoxWrap {
     display: flex;
     justify-content: right;
     padding: 8rem 7.5rem 0 0;
